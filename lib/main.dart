@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:klik_ustadz/homePage.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 
@@ -14,9 +15,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme:  _buildTheme(Brightness.light),
       home: SplashScreen(),
     );
   }
+}
+
+ThemeData _buildTheme(brightness) {
+  var baseTheme = ThemeData(brightness: brightness);
+
+  return baseTheme.copyWith(
+    textTheme: GoogleFonts.poppinsTextTheme(baseTheme.textTheme),
+  );
 }
 
 class SplashScreen extends StatefulWidget {
