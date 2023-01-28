@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:klik_ustadz/packages/pengajian.dart';
 import 'package:klik_ustadz/packages/usztad.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
 
 class PengajianCard extends StatelessWidget {
-  const PengajianCard({super.key});
+  final Pengajian pengajian;
+  const PengajianCard({super.key, required this.pengajian});
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +32,22 @@ class PengajianCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
                       Icons.location_pin,
                       color: customGreen,
                       size: 14,
                     ),
-                    Expanded(child: SizedBox(width: 6)),
+                    SizedBox(width: 6),
                     Text(
-                      'Lokasi',
+                      pengajian.location!,
                       style: BodyGreen,
                     ),
                     // Icon(Icons.bookmark_add_outlined),
                   ],
                 ),
                 Text(
-                  'Pengajian Akidah',
+                  pengajian.name!,
                   style: Headline14,
                 ),
                 SizedBox(
@@ -63,7 +64,7 @@ class PengajianCard extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Penceramah',
+                      pengajian.penceramah!,
                       style: Body,
                     ),
                   ],
@@ -79,7 +80,7 @@ class PengajianCard extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Date',
+                      pengajian.date!,
                       style: Body,
                     ),
                   ],
@@ -95,7 +96,7 @@ class PengajianCard extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Time',
+                      pengajian.time!,
                       style: Body,
                     ),
                   ],

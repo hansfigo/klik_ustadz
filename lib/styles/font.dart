@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 
+ TextStyle Headline18 =
+    TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: customBlack);
+
 TextStyle Headline14 =
     TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: customBlack);
 
