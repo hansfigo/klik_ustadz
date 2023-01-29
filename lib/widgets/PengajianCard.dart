@@ -3,13 +3,23 @@ import 'package:klik_ustadz/packages/pengajian.dart';
 import 'package:klik_ustadz/packages/usztad.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
+import 'package:random_avatar/random_avatar.dart';
 
 class PengajianCard extends StatelessWidget {
   final Pengajian pengajian;
-  const PengajianCard({super.key, required this.pengajian});
+  final svgCode;
+  const PengajianCard({super.key, required this.pengajian, this.svgCode});
+  
 
   @override
   Widget build(BuildContext context) {
+     void showSnackbar(String status) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(status),
+        duration: const Duration(seconds: 1),
+      ));
+    }
+
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -25,6 +35,7 @@ class PengajianCard extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: customGreenSec,
+                child: svgCode,
               ),
             ),
             SizedBox(width: 14),
@@ -114,7 +125,9 @@ class PengajianCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        showSnackbar("Anda Harus Login Terlebuh Dahulu");
+                      },
                       child: Text(
                         "Daftar Sekarang",
                         style: TextStyle(
@@ -128,5 +141,7 @@ class PengajianCard extends StatelessWidget {
         ),
       ),
     );
-  }
-}
+    
+  }}
+  
+

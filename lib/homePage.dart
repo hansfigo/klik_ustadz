@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:klik_ustadz/chatListPage.dart';
 import 'package:klik_ustadz/packages/pengajian.dart';
 import 'package:klik_ustadz/packages/usztad.dart';
+import 'package:klik_ustadz/profilePage.dart';
 import 'package:klik_ustadz/widgets/PengajianCard.dart';
 import 'package:klik_ustadz/widgets/dropdown.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
 import 'package:klik_ustadz/widgets/ustadzCard.dart';
 import 'package:outline_search_bar/outline_search_bar.dart';
+import 'package:random_avatar/random_avatar.dart';
+
+const rnd = 'qw';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,20 +24,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  static  List<Widget> _listPage = <Widget>[
-    HomePageWidget(),
-    ChatList(),
-    Text(
-      'Profile Page',
-    ),
+  static final List<Widget> _listPage = <Widget>[
+    const HomePageWidget(),
+    const ChatList(),
+    const ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     void showSnackbar(String status) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('$status'),
-        duration: Duration(seconds: 1),
+        content: Text(status),
+        duration: const Duration(seconds: 1),
       ));
     }
 
@@ -69,7 +71,7 @@ class _HomePageState extends State<HomePage> {
           return Scaffold(
               floatingActionButton: FloatingActionButton(
                 backgroundColor: customGreen,
-                child: Icon(Icons.chat_outlined),
+                child: const Icon(Icons.chat_outlined),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
@@ -78,9 +80,8 @@ class _HomePageState extends State<HomePage> {
                   ));
                 },
               ),
-              body: HomePageWidgetWeb());
+              body: const HomePageWidgetWeb());
         }
-        ;
       },
     );
   }
@@ -95,8 +96,8 @@ class HomePageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     void showSnackbar(String status) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('$status'),
-        duration: Duration(seconds: 1),
+        content: Text(status),
+        duration: const Duration(seconds: 1),
       ));
     }
 
@@ -116,7 +117,7 @@ class HomePageWidget extends StatelessWidget {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
                     Text(
                       'Lokasi',
                       style: TextStyle(fontSize: 12, color: Colors.black26),
@@ -128,12 +129,12 @@ class HomePageWidget extends StatelessWidget {
                   onPressed: () {
                     showSnackbar('Notification Button Pressed');
                   },
-                  icon: Icon(Icons.notifications_outlined),
+                  icon: const Icon(Icons.notifications_outlined),
                   iconSize: 26,
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -152,11 +153,11 @@ class HomePageWidget extends StatelessWidget {
                         textStyle: Body,
                         hideSearchButton: true,
                         cursorColor: customGreen,
-                        icon: Icon(Icons.search_outlined),
+                        icon: const Icon(Icons.search_outlined),
                         onSearchButtonPressed: showSnackbar,
                       )),
                 ),
-                Expanded(flex: 1, child: SizedBox()),
+                const Expanded(flex: 1, child: SizedBox()),
                 Ink(
                   decoration: BoxDecoration(
                       border: Border.all(width: 1, color: Colors.black38),
@@ -165,14 +166,14 @@ class HomePageWidget extends StatelessWidget {
                       onPressed: () {
                         showSnackbar('Filter Button Pressed');
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.filter_alt_outlined,
                         color: Colors.black38,
                       )),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Row(
@@ -198,8 +199,16 @@ class HomePageWidget extends StatelessWidget {
                   itemCount: ustadzList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    Widget svgCode = randomAvatar(
+                        ustadzList[index].name.toString() + rnd,
+                        height: 100,
+                        width: 100,
+                        trBackground: true);
                     final Ustadz us = ustadzList[index];
-                    return UstadzCard(us: us);
+                    return UstadzCard(
+                      us: us,
+                      avatar: svgCode,
+                    );
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(width: 22);
@@ -230,7 +239,7 @@ class HomePageWidget extends StatelessWidget {
               height: 16,
             ),
             SizedBox(
-              height: 184,
+              height: 190,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
                   dragDevices: {
@@ -242,8 +251,17 @@ class HomePageWidget extends StatelessWidget {
                   itemCount: pengajianList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    Widget svgCode = randomAvatar(
+                        pengajianList[index].name.toString(),
+                        height: 100,
+                        width: 100,
+                        trBackground: true);
+
                     final Pengajian pengajian = pengajianList[index];
-                    return PengajianCard(pengajian: pengajian);
+                    return PengajianCard(
+                      pengajian: pengajian,
+                      svgCode: svgCode,
+                    );
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(width: 20);
@@ -316,7 +334,11 @@ class HomePageWidgetWeb extends StatelessWidget {
                 ),
                 IconButton(
                   onPressed: () {
-                    showSnackbar('Profile Button Pressed');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(),
+                        ));
                   },
                   icon: Icon(Icons.person_outline),
                   iconSize: 26,
@@ -329,24 +351,12 @@ class HomePageWidgetWeb extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Rekomendasi Ustadz', style: Headline14),
-                Text('Telusuri', style: BodyGreen),
-              ],
-            ),
+            Text('Rekomendasi Ustadz', style: Headline14),
             SizedBox(
               height: 16,
             ),
-            // SizedBox(
-            //   height : 360,
-            //   child: GridView.count(crossAxisCount: 6, children: ustadzList.map((e) {
-            //     return UstadzCard(us: e);
-            //   }).toList(),),
-            // ),
             SizedBox(
-              height: 188,
+              height: 300,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
                   dragDevices: {
@@ -354,17 +364,43 @@ class HomePageWidgetWeb extends StatelessWidget {
                     PointerDeviceKind.mouse,
                   },
                 ),
-                child: ListView.separated(
-                  itemCount: ustadzList.length,
-                  scrollDirection: Axis.horizontal,
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200,
+                      childAspectRatio: 1/ 1,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20),
+                      itemCount: ustadzList.length,
                   itemBuilder: (context, index) {
+                    Widget svgCode = randomAvatar(
+                        ustadzList[index].name.toString() + rnd,
+                        height: 100,
+                        width: 100,
+                        trBackground: true);
                     final Ustadz us = ustadzList[index];
-                    return UstadzCard(us: us);
-                  },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(width: 22);
+                    return UstadzCard(us: us, avatar: svgCode);
+                    //     );
                   },
                 ),
+                // child: ListView.separated(
+                //   itemCount: ustadzList.length,
+                //   scrollDirection: Axis.horizontal,
+                //   itemBuilder: (context, index) {
+                //     Widget svgCode = randomAvatar(
+                //         ustadzList[index].name.toString() + rnd,
+                //         height: 100,
+                //         width: 100,
+                //         trBackground: true);
+                //     final Ustadz us = ustadzList[index];
+                //     return UstadzCard(
+                //       us: us,
+                //       avatar: svgCode,
+                //     );
+                //   },
+                //   separatorBuilder: (BuildContext context, int index) {
+                //     return SizedBox(width: 22);
+                //   },
+                // ),
               ),
             ),
             SizedBox(
@@ -373,24 +409,15 @@ class HomePageWidgetWeb extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Info Pengajian',
-                  style: Headline14,
-                ),
-                Text(
-                  'Telusuri',
-                  style: BodyGreen,
-                ),
-              ],
+            Text(
+              'Info Pengajian',
+              style: Headline14,
             ),
             SizedBox(
               height: 16,
             ),
             SizedBox(
-              height: 184,
+              height: 194,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
                   dragDevices: {
@@ -402,8 +429,17 @@ class HomePageWidgetWeb extends StatelessWidget {
                   itemCount: pengajianList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    Widget svgCode = randomAvatar(
+                        pengajianList[index].name.toString(),
+                        height: 100,
+                        width: 100,
+                        trBackground: true);
+
                     final Pengajian pengajian = pengajianList[index];
-                    return PengajianCard(pengajian: pengajian);
+                    return PengajianCard(
+                      pengajian: pengajian,
+                      svgCode: svgCode,
+                    );
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(width: 20);

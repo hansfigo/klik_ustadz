@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'styles/font.dart';
 
-class ChatList extends StatefulWidget {
-  const ChatList({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
-  @override
-  State<ChatList> createState() => _ChatListState();
-}
-
-class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +27,7 @@ class _ChatListState extends State<ChatList> {
                 ),
                 Center(
                     child: Text(
-                  'Chat Page',
+                  'Profile Page',
                   style: Headline18,
                 )),
               ],

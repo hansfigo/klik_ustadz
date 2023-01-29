@@ -67,7 +67,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(height: 12),
                     LoadingAnimationWidget.discreteCircle(
                         color: Colors.white, size: 40)
                   ],
