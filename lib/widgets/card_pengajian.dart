@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:klik_ustadz/packages/pengajian.dart';
-import 'package:klik_ustadz/packages/usztad.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
-import 'package:random_avatar/random_avatar.dart';
 
 class PengajianCard extends StatelessWidget {
   final Pengajian pengajian;
@@ -38,18 +36,18 @@ class PengajianCard extends StatelessWidget {
                 child: svgCode,
               ),
             ),
-            SizedBox(width: 14),
+            const SizedBox(width: 14),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_pin,
                       color: customGreen,
                       size: 14,
                     ),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                     Text(
                       pengajian.location!,
                       style: BodyGreen,
@@ -61,17 +59,17 @@ class PengajianCard extends StatelessWidget {
                   pengajian.name!,
                   style: Headline14,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 2,
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.people,
                       color: Colors.black38,
                       size: 14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 4,
                     ),
                     Text(
@@ -82,12 +80,12 @@ class PengajianCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.calendar_today_outlined,
                       color: Colors.black38,
                       size: 14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 4,
                     ),
                     Text(
@@ -98,12 +96,12 @@ class PengajianCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.watch,
                       color: Colors.black38,
                       size: 14,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 4,
                     ),
                     Text(
@@ -112,7 +110,7 @@ class PengajianCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 Container(
@@ -128,7 +126,7 @@ class PengajianCard extends StatelessWidget {
                       onPressed: () {
                         showSnackbar("Anda Harus Login Terlebuh Dahulu");
                       },
-                      child: Text(
+                      child: const Text(
                         "Daftar Sekarang",
                         style: TextStyle(
                           color: customGreen,

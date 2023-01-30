@@ -2,7 +2,6 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 
-import '../packages/usztad.dart';
 
 class DropdownC extends StatefulWidget {
   const DropdownC({Key? key}) : super(key: key);
@@ -67,8 +66,8 @@ class _DropdownCState extends State<DropdownC> {
         // iconEnabledColor: Colors.yellow,
         // iconDisabledColor: Colors.grey,
         buttonHeight: 26,
-        buttonWidth: 160,
-        buttonPadding: const EdgeInsets.only(left: 22, right: 24),
+        buttonWidth: 120,
+        // buttonPadding: const EdgeInsets.only(left: 22, right: 24),
         // buttonDecoration: BoxDecoration(
         //   borderRadius: BorderRadius.circular(14),
         //   border: Border.all(
@@ -78,7 +77,7 @@ class _DropdownCState extends State<DropdownC> {
         // ),
         buttonElevation: 2,
         itemHeight: 40,
-        itemPadding: const EdgeInsets.only(left: 14, right: 14),
+        // itemPadding: const EdgeInsets.only(left: 14, right: 14),
         dropdownMaxHeight: 200,
         dropdownWidth: 200,
         // dropdownPadding: null,

@@ -20,9 +20,9 @@ class ProfilePage extends StatelessWidget {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(Icons.arrow_back))
-                    : SizedBox(height: 0),
-                SizedBox(
+                        icon: const Icon(Icons.arrow_back))
+                    : const SizedBox(height: 0),
+                const SizedBox(
                   height: 40,
                 ),
                 Center(

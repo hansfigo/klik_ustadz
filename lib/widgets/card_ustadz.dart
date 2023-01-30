@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:klik_ustadz/packages/usztad.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
-import 'package:klik_ustadz/ustadzDetail.dart';
+import 'package:klik_ustadz/detail_ustadz_page.dart';
 
 class UstadzCard extends StatelessWidget {
   final Ustadz us;

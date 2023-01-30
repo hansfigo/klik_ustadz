@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:klik_ustadz/chatListPage.dart';
+import 'package:klik_ustadz/chat_list_page.dart';
 import 'package:klik_ustadz/packages/pengajian.dart';
 import 'package:klik_ustadz/packages/usztad.dart';
-import 'package:klik_ustadz/profilePage.dart';
-import 'package:klik_ustadz/widgets/PengajianCard.dart';
+import 'package:klik_ustadz/profile_page.dart';
+import 'package:klik_ustadz/widgets/card_pengajian.dart';
 import 'package:klik_ustadz/widgets/dropdown.dart';
 import 'package:klik_ustadz/styles/colors.dart';
 import 'package:klik_ustadz/styles/font.dart';
-import 'package:klik_ustadz/widgets/ustadzCard.dart';
+import 'package:klik_ustadz/widgets/card_ustadz.dart';
 import 'package:outline_search_bar/outline_search_bar.dart';
 import 'package:random_avatar/random_avatar.dart';
 
@@ -32,12 +32,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    void showSnackbar(String status) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(status),
-        duration: const Duration(seconds: 1),
-      ));
-    }
 
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
@@ -183,7 +177,7 @@ class HomePageWidget extends StatelessWidget {
                 Text('Telusuri', style: BodyGreen),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             SizedBox(
@@ -211,15 +205,15 @@ class HomePageWidget extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(width: 22);
+                    return const SizedBox(width: 22);
                   },
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Row(
@@ -235,7 +229,7 @@ class HomePageWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             SizedBox(
@@ -264,7 +258,7 @@ class HomePageWidget extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(width: 20);
+                    return const SizedBox(width: 20);
                   },
                 ),
               ),
@@ -286,7 +280,7 @@ class HomePageWidgetWeb extends StatelessWidget {
     void showSnackbar(String status) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('$status'),
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
       ));
     }
 
@@ -304,7 +298,7 @@ class HomePageWidgetWeb extends StatelessWidget {
                   width: 36,
                   child: Image.asset('images/logo.png'),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 22,
                 ),
                 Expanded(
@@ -321,7 +315,7 @@ class HomePageWidgetWeb extends StatelessWidget {
                         textStyle: Body,
                         hideSearchButton: true,
                         cursorColor: customGreen,
-                        icon: Icon(Icons.search_outlined),
+                        icon: const Icon(Icons.search_outlined),
                         onSearchButtonPressed: showSnackbar,
                       )),
                 ),
@@ -329,7 +323,7 @@ class HomePageWidgetWeb extends StatelessWidget {
                   onPressed: () {
                     showSnackbar('Notification Button Pressed');
                   },
-                  icon: Icon(Icons.notifications_outlined),
+                  icon: const Icon(Icons.notifications_outlined),
                   iconSize: 26,
                 ),
                 IconButton(
@@ -337,22 +331,19 @@ class HomePageWidgetWeb extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ProfilePage(),
+                          builder: (context) => const ProfilePage(),
                         ));
                   },
-                  icon: Icon(Icons.person_outline),
+                  icon: const Icon(Icons.person_outline),
                   iconSize: 26,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            SizedBox(
-              height: 40,
-            ),
             Text('Rekomendasi Ustadz', style: Headline14),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             SizedBox(
@@ -403,17 +394,17 @@ class HomePageWidgetWeb extends StatelessWidget {
                 // ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
               'Info Pengajian',
               style: Headline14,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             SizedBox(
@@ -442,7 +433,7 @@ class HomePageWidgetWeb extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(width: 20);
+                    return const SizedBox(width: 20);
                   },
                 ),
               ),

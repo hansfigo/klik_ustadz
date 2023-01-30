@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.klik_ustadz">
    <application
-        android:label="klik_ustadz"
+        android:label="Klik Ustadz"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_klik_ustadz">
         <activity
             android:name=".MainActivity"
             android:exported="true"

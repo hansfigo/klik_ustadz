@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'styles/font.dart';
 
-class ChatList extends StatefulWidget {
-  const ChatList({super.key});
 
-  @override
-  State<ChatList> createState() => _ChatListState();
-}
+class ChatList extends StatelessWidget {
+  const ChatList({Key? key}) : super(key: key);
 
-class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +21,9 @@ class _ChatListState extends State<ChatList> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(Icons.arrow_back))
-                    : SizedBox(height: 0),
-                SizedBox(
+                        icon: const Icon(Icons.arrow_back))
+                    : const SizedBox(height: 0),
+                const SizedBox(
                   height: 40,
                 ),
                 Center(
@@ -39,7 +35,9 @@ class _ChatListState extends State<ChatList> {
             );
           },
         ),
-      ),
-    );
+      ));
   }
 }
+
+
+
