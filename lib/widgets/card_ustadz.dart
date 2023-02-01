@@ -18,7 +18,10 @@ class UstadzCard extends StatelessWidget {
             context,
             PageRouteBuilder(
                 transitionDuration: const Duration(seconds: 1),
-                pageBuilder: (_, __, ___) => UstadzDetail(us: us, avatar: avatar,)));
+                pageBuilder: (_, __, ___) => UstadzDetail(
+                      us: us,
+                      avatar: avatar,
+                    )));
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -30,17 +33,23 @@ class UstadzCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Hero(
-                    tag: 'img-${us.name}',
-                    child: Container(
-                      width: 100,
-                      height: 100,
-                      color: customGreenSec,
-                      child: avatar,
+                child: Stack(
+                  alignment: Alignment.topRight,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Hero(
+                        tag: 'img-${us.name}',
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          color: customGreenSec,
+                          child: avatar,
+                        ),
+                      ),
                     ),
-                  ),
+                    const BookmarkButton(),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -58,6 +67,40 @@ class UstadzCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class BookmarkButton extends StatefulWidget {
+  const BookmarkButton({super.key});
+
+  @override
+  State<BookmarkButton> createState() => _BookmarkButtonState();
+}
+
+class _BookmarkButtonState extends State<BookmarkButton> {
+  bool isSelectedBookmark = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: isSelectedBookmark
+          ? const Icon(
+              Icons.bookmark, color: customGreen,
+            )
+          : const Icon(
+              Icons.bookmark_border, color: customGreen,
+            ),
+      onPressed: () {
+        setState(() {
+          if (isSelectedBookmark == true) {
+            isSelectedBookmark = false;
+          }else{
+            isSelectedBookmark = true;
+          }
+          
+        });
+      },
     );
   }
 }

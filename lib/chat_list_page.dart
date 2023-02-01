@@ -15,7 +15,7 @@ class ChatList extends StatelessWidget {
           builder: (p0, p1) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget> [
                 p1.maxWidth >= 600
                     ? IconButton(
                         onPressed: () {
@@ -31,6 +31,17 @@ class ChatList extends StatelessWidget {
                   'Chat Page',
                   style: headline_18,
                 )),
+                Expanded(
+                  child: Center(
+                    child: Column(
+                      children: const [
+                        Expanded(child: SizedBox()),
+                        Expanded(child: Text('Under Contruction')),
+                        Expanded(child: SizedBox()),
+                      ],
+                    ),
+                  ),
+                )
               ],
             );
           },
