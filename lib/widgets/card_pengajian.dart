@@ -5,8 +5,8 @@ import 'package:klik_ustadz/styles/font.dart';
 
 class PengajianCard extends StatelessWidget {
   final Pengajian pengajian;
-  final svgCode;
-  const PengajianCard({super.key, required this.pengajian, this.svgCode});
+  final Widget svgCode;
+  const PengajianCard({super.key, required this.pengajian,required this.svgCode});
   
 
   @override
@@ -50,14 +50,14 @@ class PengajianCard extends StatelessWidget {
                     const SizedBox(width: 6),
                     Text(
                       pengajian.location!,
-                      style: BodyGreen,
+                      style: bodyGreen_12,
                     ),
                     // Icon(Icons.bookmark_add_outlined),
                   ],
                 ),
                 Text(
                   pengajian.name!,
-                  style: Headline14,
+                  style: headline_14,
                 ),
                 const SizedBox(
                   height: 2,
@@ -74,7 +74,7 @@ class PengajianCard extends StatelessWidget {
                     ),
                     Text(
                       pengajian.penceramah!,
-                      style: Body,
+                      style: body_12,
                     ),
                   ],
                 ),
@@ -90,7 +90,7 @@ class PengajianCard extends StatelessWidget {
                     ),
                     Text(
                       pengajian.date!,
-                      style: Body,
+                      style: body_12,
                     ),
                   ],
                 ),
@@ -106,14 +106,14 @@ class PengajianCard extends StatelessWidget {
                     ),
                     Text(
                       pengajian.time!,
-                      style: Body,
+                      style: body_12,
                     ),
                   ],
                 ),
                 const SizedBox(
                   height: 12,
                 ),
-                Container(
+                SizedBox(
                     height: 36,
                     width: 176,
                     child: TextButton(

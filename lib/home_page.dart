@@ -143,8 +143,8 @@ class HomePageWidget extends StatelessWidget {
                         searchButtonIconColor: Colors.black38,
                         borderColor: Colors.black38,
                         hintText: 'Cari Ustads',
-                        hintStyle: BodyGray,
-                        textStyle: Body,
+                        hintStyle: bodyGray_12,
+                        textStyle: body_12,
                         hideSearchButton: true,
                         cursorColor: customGreen,
                         icon: const Icon(Icons.search_outlined),
@@ -173,8 +173,8 @@ class HomePageWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Rekomendasi Ustadz', style: Headline14),
-                Text('Telusuri', style: BodyGreen),
+                Text('Rekomendasi Ustadz', style: headline_14),
+                Text('Telusuri', style: bodyGreen_12),
               ],
             ),
             const SizedBox(
@@ -221,11 +221,11 @@ class HomePageWidget extends StatelessWidget {
               children: [
                 Text(
                   'Info Pengajian',
-                  style: Headline14,
+                  style: headline_14,
                 ),
                 Text(
                   'Telusuri',
-                  style: BodyGreen,
+                  style: bodyGreen_12,
                 ),
               ],
             ),
@@ -279,7 +279,7 @@ class HomePageWidgetWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     void showSnackbar(String status) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('$status'),
+        content: Text(status),
         duration: const Duration(seconds: 1),
       ));
     }
@@ -311,8 +311,8 @@ class HomePageWidgetWeb extends StatelessWidget {
                         searchButtonIconColor: Colors.black38,
                         borderColor: Colors.black38,
                         hintText: 'Cari Ustads',
-                        hintStyle: BodyGray,
-                        textStyle: Body,
+                        hintStyle: bodyGray_12,
+                        textStyle: body_12,
                         hideSearchButton: true,
                         cursorColor: customGreen,
                         icon: const Icon(Icons.search_outlined),
@@ -342,7 +342,7 @@ class HomePageWidgetWeb extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            Text('Rekomendasi Ustadz', style: Headline14),
+            Text('Rekomendasi Ustadz', style: headline_14),
             const SizedBox(
               height: 16,
             ),
@@ -402,7 +402,7 @@ class HomePageWidgetWeb extends StatelessWidget {
             ),
             Text(
               'Info Pengajian',
-              style: Headline14,
+              style: headline_14,
             ),
             const SizedBox(
               height: 16,

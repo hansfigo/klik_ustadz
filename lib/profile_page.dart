@@ -28,7 +28,7 @@ class ProfilePage extends StatelessWidget {
                 Center(
                     child: Text(
                   'Profile Page',
-                  style: Headline18,
+                  style: headline_18,
                 )),
               ],
             );

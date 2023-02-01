@@ -29,7 +29,7 @@ class ChatList extends StatelessWidget {
                 Center(
                     child: Text(
                   'Chat Page',
-                  style: Headline18,
+                  style: headline_18,
                 )),
               ],
             );

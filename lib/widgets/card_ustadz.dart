@@ -48,11 +48,11 @@ class UstadzCard extends StatelessWidget {
               ),
               Text(
                 us.name!,
-                style: Headline12,
+                style: headline_12,
               ),
               Text(
                 us.location!,
-                style: Body,
+                style: body_12,
               ),
             ],
           ),

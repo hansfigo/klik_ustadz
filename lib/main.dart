@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 100,
           ),
           Expanded(
@@ -74,19 +74,17 @@ class _SplashScreenState extends State<SplashScreen> {
                   ))),
           Expanded(
             flex: 1,
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: LoadingAnimationWidget.discreteCircle(
-                        color: Colors.white, size: 40),
-                  ),
-                ],
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: LoadingAnimationWidget.discreteCircle(
+                      color: Colors.white, size: 40),
+                ),
+              ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Text(
               'Made by \nClaudio Hans Figo using Flutter',
               textAlign: TextAlign.center,
@@ -95,7 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: SizedBox(),
           ),
         ],
