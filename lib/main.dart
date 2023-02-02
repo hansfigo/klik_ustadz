@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
         theme: _buildTheme(Brightness.light),
-        home: const SplashScreen(),
+        home: const HomePage(),
       );
     });
   }
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
 
 ThemeData _buildTheme(brightness) {
   var baseTheme = ThemeData(brightness: brightness);
+
 
   return baseTheme.copyWith(
     textTheme: GoogleFonts.poppinsTextTheme(baseTheme.textTheme),
@@ -44,14 +45,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
 
   // Splash Screen timer
-  void initState() {
-    super.initState();
-    Timer(const Duration(seconds: 4), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => const HomePage(),
-      ));
-    });
-  }
+  // void initState() {
+  //   super.initState();
+  //   Timer(const Duration(seconds: 4), () {
+  //     Navigator.of(context).pushReplacement(MaterialPageRoute(
+  //       builder: (context) => const HomePage(),
+  //     ));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

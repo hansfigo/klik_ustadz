@@ -44,32 +44,32 @@ var ustadzList = [
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
       picture: 'images/r3.jpg'),
-  Ustadz(
-      name: 'Muhammad Zaid',
-      initial: 'AB',
-      location: 'Godean',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
-      picture: 'images/r3.jpg'),
-  Ustadz(
-      name: 'Nur Bani',
-      initial: 'AB',
-      location: 'Kota Yogyakarta',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
-      picture: 'images/r3.jpg'),
-  Ustadz(
-      name: 'Zulfi MS',
-      initial: 'AB',
-      location: 'Kalasan',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
-      picture: 'images/r3.jpg'),
-  Ustadz(
-      name: 'Renza Katro',
-      initial: 'AB',
-      location: 'Kalasan',
-      description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
-      picture: 'images/r3.jpg'),
+  // Ustadz(
+  //     name: 'Muhammad Zaid',
+  //     initial: 'AB',
+  //     location: 'Godean',
+  //     description:
+  //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
+  //     picture: 'images/r3.jpg'),
+  // Ustadz(
+  //     name: 'Nur Bani',
+  //     initial: 'AB',
+  //     location: 'Kota Yogyakarta',
+  //     description:
+  //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
+  //     picture: 'images/r3.jpg'),
+  // Ustadz(
+  //     name: 'Zulfi MS',
+  //     initial: 'AB',
+  //     location: 'Kalasan',
+  //     description:
+  //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
+  //     picture: 'images/r3.jpg'),
+  // Ustadz(
+  //     name: 'Renza Katro',
+  //     initial: 'AB',
+  //     location: 'Kalasan',
+  //     description:
+  //         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus venenatis leo ac finibus. Nunc dignissim ullamcorper justo vitae lacinia. Maecenas venenatis magna non aliquam convallis. Nullam auctor urna at rutrum pharetra. Morbi hendrerit orci turpis, nec sollicitudin neque varius et. Donec ultrices condimentum quam, sed sodales massa cursus at. Vivamus et posuere leo, in efficitur risus. Donec eleifend consectetur tristique. ',
+  //     picture: 'images/r3.jpg'),
 ];
