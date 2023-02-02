@@ -42,7 +42,8 @@ class UstadzDetail extends StatelessWidget {
                       color: customGreenSec, shape: BoxShape.circle),
                   child: Hero(
                     tag: 'img-${us.name}',
-                    child: avatar,
+                    child: Image.asset(us.picture!),
+                    // child: avatar,
                     // child: CircleAvatar(
                     //   backgroundColor: customGreenSec,
                     //   backgroundImage: avatar,
